@@ -13,7 +13,12 @@ div {
     font-size: 24px;
   }
   
-  /* Styles for individual notes - assuming your Note component has some container element */
+  .notes-wrapper {
+    padding: 0 20px; /* horizontal padding */
+    /*max-width: 800px;  limit total width */
+    /*margin: 0 auto;  center the content */
+  }
+  
   .note {
     background-color: #f9f9f9;
     border-left: 5px solid #007bff;

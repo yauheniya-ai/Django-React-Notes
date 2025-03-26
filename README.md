@@ -1,9 +1,19 @@
 # Django + React Notes App
 
-This is a simple Notes application developed with **Django** for the backend and **React** for the frontend.
+This is a simple Notes application developed with **Django** for the backend and **React** for the frontend. It supports Markdown formatting with syntax-highlighted code blocks, allowing you to write and display beautifully formatted notes.
 
-🛰️ The application is deployed on **Choreo** and can be accessed [here](https://8a38c82b-68ac-414d-bff1-4ee6a34eacd7.e1-eu-north-azure.choreoapps.dev).
+🛰️ The application is deployed on **Choreo** and uses a **Neon PostgreSQL** database for persistent data storage.
 
 ---
 
-Feel free to explore, take notes, and enjoy!
+Here’s what the app looks like:
+![Register](Screenshot_Register.png)
+![Create](Screenshot_CreateNote.png)
+![Saved](Screenshot_SavedNotes.png)
+![Saved](Screenshot_Admin.png)
+
+---
+
+Feel free to explore and take notes!
+
+
