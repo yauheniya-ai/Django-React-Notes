@@ -33,6 +33,14 @@
     color: #999;
     font-size: 0.8rem;
   }
+
+  .note-tags {
+    margin-top: 10px;
+    background: #f0f0f0;
+    padding: 8px;
+    border-radius: 4px;
+    font-style: italic;
+  }
   
   .delete-button {
     background-color: #808080;

@@ -31,18 +31,41 @@ function Home() {
         
     };
 
-    const createNote = (e) => {
-        e.preventDefault()
-        api
-            .post("/api/notes/", {content, title})
-            .then((res) => {
-                if (res.status === 201) alert("Note created!");
-                else alert("Failed to make note.");
-                getNotes();
-            })
-            .catch((err) => alert(err));
-            
+    const createNote = async (e) => {
+        e.preventDefault();
+        
+        try {
+            // Step 1: Call AI-powered auto-tagging API
+            const tagResponse = await api.post(
+                "/api/notes/autotag/",
+                { content },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+    
+            const tags = tagResponse.data.tags; // AI-generated tags
+    
+            // Step 2: Save the note with the generated tags
+            const res = await api.post("/api/notes/", { 
+                title, 
+                content, 
+                tags 
+            });
+    
+            if (res.status === 201) {
+                alert("Note created with AI-generated tags!");
+                getNotes(); // Refresh notes
+            } else {
+                alert("Failed to create note.");
+            }
+        } catch (err) {
+            alert("Error: " + JSON.stringify(err.response ? err.response.data : err.message));
+        }
     };
+    
 
     return <div>
         <h2 style={{ textAlign: "center" }}>Create a Note</h2>

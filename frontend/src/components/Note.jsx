@@ -34,6 +34,14 @@ function Note({note, onDelete}) {
             />
         </div>
 
+
+        {/* AI-generated tags */}
+        {note.tags && (
+            <p className="note-tags">
+                <strong>Tags:</strong> {note.tags}
+            </p>
+        )}
+
         <button className="delete-button" onClick={() => onDelete(note.id)}>
             Delete
         </button>
